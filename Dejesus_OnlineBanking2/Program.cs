@@ -1,158 +1,38 @@
 ﻿using System;
+using OnlineBangkingCL;
 
 namespace Dejesus_OnlineBanking2
 {
     internal class Program
     {
-        static void Main()
+        static void Main(string[]args)
         {
             Console.WriteLine(" ================== Payment System ================== ");
 
             double ProductPrice = 370;
             double ElectricityBill = 1500;
             double WaterBill = 800;
-            bool another = false; 
-            double amount;
 
-                string PaymentMethod = "";
-                string BillType = "";
-                double BillMin = 0;
+            PaymentMethod method = new PaymentMethod();
+            method.SelectMethod();
 
-                    Console.WriteLine("Select Payment Method: ");
-                    Console.WriteLine("1. GCash");
-                    Console.WriteLine("2. PayMaya");
-                    Console.Write("Enter choice (1 or 2): ");
-                    var choice = Console.ReadLine();
+            Bill bill = new Bill();
+            bill.SelectBill(ProductPrice, ElectricityBill, WaterBill);
 
-                    switch (choice)
-                    {
-                        case "1":
-                            PaymentMethod = "GCash";
-                            break;
+            AccountInfo account = new AccountInfo();
+            account.InputAccount();
 
-                        case "2":
-                            PaymentMethod = "PayMaya";
-                            break;
+            PaymentReceipt receipt = new PaymentReceipt
+            {
+                PaymentMethod = method,
+                Bill = bill,
+                AccountInfo = account
+            };
+            receipt.InputAmount();
+            receipt.PrintReceipt();
+        }
+    }
+}
 
-                        default:
-                            Console.WriteLine("Invalid Payment Method");
-                            break;
-                    }
 
-                  
-                        Console.WriteLine("\n======== BILL TYPE ========\n");
-                        Console.WriteLine("1. Product");
-                        Console.WriteLine("2. Electricity Bill");
-                        Console.WriteLine("3. Water Bill");
-                        Console.Write("Select Bill Type: ");
-                        string Billtype = Console.ReadLine();
-
-                       if (Billtype == "1")
-                       { 
-                       Console.WriteLine("Your Product Bill is: " + "P" + ProductPrice);
-                       } else if (Billtype == "2")
-                       {
-                       Console.WriteLine("Your Electric Bill is: " + "P" + ElectricityBill);
-                       }
-                       else if (Billtype == "3")
-                       {
-                       Console.WriteLine("Your Water Bill is: " + "P" + WaterBill);
-                       }
-
-                Console.WriteLine("\n========= Account Info =========");
-                       Console.Write("\nEnter Account Name: ");
-                       string AccountName = Console.ReadLine();
-
-                       Console.Write("Enter Account Number: ");
-                       string AccountNumber = Console.ReadLine();
-               
-                        Console.Write("Enter Amount: ");
-                        amount = Convert.ToDouble(Console.ReadLine());
-
-                            if (Billtype == "1")
-                            {
-                               
-                                BillType = "Product";
-                                BillMin = ProductPrice;
-                                
-                                Console.WriteLine("\n========= Payment Receipt =========");
-                                Console.WriteLine("Payment Method: " + PaymentMethod);
-                                Console.WriteLine("Bill Type: " + BillType);
-                                Console.WriteLine("Account Name: " + AccountName);
-                                Console.WriteLine("Account Number: " + AccountNumber);
-                                Console.WriteLine("Amount: " + "P" + amount);
-
-                    
-                              if (amount > BillMin)
-                    {
-                        Console.WriteLine("Change: " + "P" + (amount - BillMin));
-                    } else if (amount == BillMin)
-                    {
-                        Console.WriteLine("Paid!");
-                    } else if (amount < BillMin)
-                    {
-                        Console.WriteLine("Not Paid");
-                    }
-                }
-                            else if (Billtype == "2")
-                            {
-                                BillType = "Electricity Bill";
-                                BillMin = ElectricityBill;
-                               
-                                Console.WriteLine("\n========= Payment Receipt =========");
-                                Console.WriteLine("Payment Method: " + PaymentMethod);
-                                Console.WriteLine("Bill Type: " + BillType);
-                                Console.WriteLine("Account Name: " + AccountName);
-                                Console.WriteLine("Account Number: " + AccountNumber);
-                                Console.WriteLine("Amount: " + "P" + amount);
-
-                           if (amount > BillMin)
-                    {
-                        Console.WriteLine("Change: " + "P" + (amount - BillMin));
-                    } else if (amount == BillMin)
-                    {
-                        Console.WriteLine("Paid!");
-                    } else if (amount < BillMin)
-                    {
-                        Console.WriteLine("Not Paid");
-                    }
-                }
-                            
-                            else if (Billtype == "3")
-                            {
-                                BillType = "Water Bill";
-                                BillMin = WaterBill;
-                                
-                                Console.WriteLine("\n========= Payment Receipt =========");
-                                Console.WriteLine("Payment Method: " + PaymentMethod);
-                                Console.WriteLine("Bill Type: " + BillType);
-                                Console.WriteLine("Account Name: " + AccountName);
-                                Console.WriteLine("Account Number: " + AccountNumber);
-                                Console.WriteLine("Amount: " + "P" + amount);
-
-                    if (amount > BillMin)
-                    {
-                        Console.WriteLine("Change: " + "P" + (amount - BillMin));
-                    }
-                    else if (amount == BillMin)
-                    {
-                        Console.WriteLine("Paid!");
-                    }
-                    else if (amount < BillMin)
-                    {
-                        Console.WriteLine("Not Paid");
-                    }
-                }
-            
-                            else
-                            {
-                                Console.WriteLine("Invalid Bill Type. Please Try again. ");
-                            }
-                        }
-                        }
-                    }
-                
-            
-       
-   
 

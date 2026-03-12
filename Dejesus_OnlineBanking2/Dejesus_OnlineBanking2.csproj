@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineBangkingCL\OnlineBangkingCL.csproj" />
+  </ItemGroup>
+
 </Project>
