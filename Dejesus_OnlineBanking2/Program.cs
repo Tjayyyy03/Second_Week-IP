@@ -7,7 +7,7 @@ namespace Dejesus_OnlineBanking2
     {
         static void Main(string[]args)
         {
-            Console.WriteLine(" ================== Payment System ================== ");
+            Console.WriteLine(" ================== Payment System ============= ");
 
             double ProductPrice = 370;
             double ElectricityBill = 1500;
