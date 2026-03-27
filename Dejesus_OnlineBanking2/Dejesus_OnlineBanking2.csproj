@@ -8,7 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnlineBangkingCL\OnlineBangkingCL.csproj" />
+    <Compile Remove="BillDataService\**" />
+    <Compile Remove="ObModels\**" />
+    <Compile Remove="PaymentMethodBl\**" />
+    <EmbeddedResource Remove="BillDataService\**" />
+    <EmbeddedResource Remove="ObModels\**" />
+    <EmbeddedResource Remove="PaymentMethodBl\**" />
+    <None Remove="BillDataService\**" />
+    <None Remove="ObModels\**" />
+    <None Remove="PaymentMethodBl\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ObModels\ObModels.csproj" />
+    <ProjectReference Include="PaymentMethodBl\PaymentMethodBl.csproj" />
   </ItemGroup>
 
 </Project>
