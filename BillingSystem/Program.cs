@@ -5,7 +5,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace BillingSystem
 {
-    // FRONTEND - UI LAYER
+
     internal class Program
     {
         static private BusinessLayer.BusinessLayer businessLayer = new();
@@ -27,14 +27,14 @@ namespace BillingSystem
                 LineFormatter();
                 Console.Write("Action: ");
 
-                // tryparse convert the input (string) to int, ! means if string input cannot be converted to int, means input is string therefore throws an error
+
                 if (!int.TryParse(Console.ReadLine(), out action))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Error: Input is not a number");
                     Console.WriteLine();
                     Console.Write("Press Any Key to try again...");
-                    Console.ReadKey(); // will read any key press by user;
+                    Console.ReadKey();
 
                     Console.Clear();
                     continue;
@@ -59,7 +59,7 @@ namespace BillingSystem
                         Console.WriteLine("Error: Enter a number from 1-3");
                         Console.WriteLine();
                         Console.Write("Press Any Key to try again...");
-                        Console.ReadKey(); // will read any key press by user;
+                        Console.ReadKey();
 
                         Console.Clear();
                         continue;
@@ -74,7 +74,7 @@ namespace BillingSystem
             Console.Write("Full Name (Format: FN SN): ");
             var fullName = Console.ReadLine();
 
-            // no validation as of now (TODO: check if input really starts with 09)
+
             Console.Write("Cellphone Number (09): ");
             var cellNum = Console.ReadLine();
             Console.Write("Username: ");
@@ -144,7 +144,7 @@ namespace BillingSystem
             Console.Write("To Many attempts. Please try again later.");
             Thread.Sleep(1500);
             Console.Clear();
-            return; // return to main() method 
+            return;
         }
         static void Dashboard(string username)
         {
@@ -164,14 +164,14 @@ namespace BillingSystem
                 LineFormatter();
                 Console.Write("Action: ");
 
-                // tryparse convert the input (string) to int, ! means if string input cannot be converted to int, means input is string therefore throws an error
+
                 if (!int.TryParse(Console.ReadLine(), out action))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Error: Input is not a number");
                     Console.WriteLine();
                     Console.Write("Press Any Key to try again...");
-                    Console.ReadKey(); // will read any key press by user;
+                    Console.ReadKey();
 
                     Console.Clear();
                     continue;
@@ -204,7 +204,7 @@ namespace BillingSystem
                         Console.WriteLine("Error: Enter a number from 1-3");
                         Console.WriteLine();
                         Console.Write("Press Any Key to try again...");
-                        Console.ReadKey(); // will read any key press by user;
+                        Console.ReadKey();
 
                         Console.Clear();
                         continue;
@@ -212,7 +212,7 @@ namespace BillingSystem
             }
         }
 
-        // all methods connected to bill feature
+
         static void Bills(string username)
         {
             var billChoice = 0;
@@ -233,7 +233,7 @@ namespace BillingSystem
                     Console.WriteLine("Error: Input is not a number");
                     Console.WriteLine();
                     Console.Write("Press Any Key to try again...");
-                    Console.ReadKey(); // will read any key press by user;
+                    Console.ReadKey();
 
                     Console.Clear();
                     continue;
@@ -272,7 +272,7 @@ namespace BillingSystem
                     Console.WriteLine("You have no Bills yet");
                     Console.WriteLine();
                     Console.Write("Press Any Key to try again...");
-                    Console.ReadKey(); // will read any key press by user;
+                    Console.ReadKey();
                     Console.Clear();
                     continue;
                 }
@@ -337,14 +337,14 @@ namespace BillingSystem
                 LineFormatter();
                 Console.Write("Action: ");
 
-                // tryparse convert the input (string) to int, ! means if string input cannot be converted to int, means input is string therefore throws an error
+
                 if (!int.TryParse(Console.ReadLine(), out action))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Error: Input is not a number");
                     Console.WriteLine();
                     Console.Write("Press Any Key to try again...");
-                    Console.ReadKey(); // will read any key press by user;
+                    Console.ReadKey();
 
                     Console.Clear();
                     continue;
@@ -369,7 +369,7 @@ namespace BillingSystem
                         Console.WriteLine("Error: Enter a number from 1-3");
                         Console.WriteLine();
                         Console.Write("Press Any Key to try again...");
-                        Console.ReadKey(); // will read any key press by user;
+                        Console.ReadKey();
 
                         Console.Clear();
                         continue;
@@ -556,7 +556,7 @@ namespace BillingSystem
             }
         }
 
-        // all methods connected to payment acc and profile
+
         static void ViewUserAccounts(string username)
         {
 

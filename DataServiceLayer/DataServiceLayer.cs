@@ -4,8 +4,7 @@ using System.Transactions;
 
 namespace DataServiceLayer
 {
-    // Data service layer
-    // where data talks to storage (db, json, etc)
+
     public class DataServiceLayer
     {
         private List<PaymentAccountsModel> _accounts = new();
@@ -61,13 +60,13 @@ namespace DataServiceLayer
             };
         }
 
-        // get list of all accounts
+
         public List<PaymentAccountsModel> AllAccounts()
         {
             return _accounts;
         }
 
-        // create account (user account)
+
         public bool CreateUserAccount(string fullName, string cellNum, string username, string password)
         {
             try
@@ -204,7 +203,7 @@ namespace DataServiceLayer
             return result;
         }
 
-        // 3. 
+
         public List<UserAccount> GetUserAccDetails(string username)
         {
             List<UserAccount> loggedUser = new();

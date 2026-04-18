@@ -6,13 +6,6 @@ namespace DataServiceLayer
     public class JsonDataService
     {
 
-        //bugsssss
-        //TODO:
-        // 1. kahit bayad na di parin nawawasan sa json yung balance ng mga accounts
-        // 2. sa payment ng bills, isa lang or yung una lang sa json yung nakukuha nya. kapag 
-        //    madaming electricity bill, yung pinaka una lang nakukuha
-
-
         private string accountsFile = "accounts.json";
         private string usersFile = "users.json";
         private string billsFile = "bills.json";

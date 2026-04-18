@@ -8,7 +8,7 @@ namespace DataServiceLayer
     public class DBDataService
     {
         static string connectionString =
-            "Data Source=DESKTOP-1PU2QVR\\SQLEXPRESS;Initial Catalog=BillingSystem;Integrated Security=True;TrustServerCertificate=True;";
+            "Data Source=PUP-CITE-PC20;Initial Catalog=BillingSystem;Integrated Security=True;TrustServerCertificate=True;";
 
         static SqlConnection sqlConnection;
 

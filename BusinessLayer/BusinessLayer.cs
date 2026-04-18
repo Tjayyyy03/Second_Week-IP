@@ -5,16 +5,19 @@ using System.Transactions;
 
 namespace BusinessLayer
 {
-    // Business Layer 
-    // where every validation goes
+
 
     public class BusinessLayer
     {
         //private DataServiceLayer.DataServiceLayer dataService = new();
-        //
-        //private JsonDataService dataService = new();
+        // InMemory
 
-        private DBDataService dataService = new();
+
+        private JsonDataService dataService = new();
+        // json
+
+        //private DBDataService dataService = new();
+        //sql
 
         // create account (user account)
         public bool CreateAccount(string fullName, string cellNum, string username, string password)

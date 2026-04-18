@@ -1,7 +1,6 @@
 ﻿namespace Models
 {
-    // MODELS
-    // data models - representation of data
+
     public class Models
     {
 
