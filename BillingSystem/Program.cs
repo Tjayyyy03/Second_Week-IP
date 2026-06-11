@@ -8,7 +8,7 @@ namespace BillingSystem
 
     internal class Program
     {
-        static private BusinessLayer.BusinessLayer businessLayer = new();
+        static private BusinessLayer.Businesslayer businessLayer = new();
 
         static void Main(string[] args)
         {

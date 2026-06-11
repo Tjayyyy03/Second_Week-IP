@@ -8,7 +8,7 @@ namespace DataServiceLayer
     public class DBDataService
     {
         static string connectionString =
-            "Data Source=PUP-CITE-PC20;Initial Catalog=BillingSystem;Integrated Security=True;TrustServerCertificate=True;";
+            "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BillingSystem;Integrated Security=True;TrustServerCertificate=True;";
 
         static SqlConnection sqlConnection;
 
@@ -20,7 +20,7 @@ namespace DataServiceLayer
         public bool CreateUserAccount(string fullName, string cellNum, string username, string password)
         {
             string query = @"
-                INSERT INTO tbl_UserAccounts (FullName, CellphoneNumber, Username, Password)
+                INSERT INTO user_Accounts (FullName, CellphoneNumber, Username, Password)
                 VALUES (@FullName, @CellNum, @Username, @Password)";
 
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
@@ -40,7 +40,7 @@ namespace DataServiceLayer
         public bool CheckLoginCredentials(string username, string password)
         {
             string query = @"
-                SELECT 1 FROM tbl_UserAccounts
+                SELECT 1 FROM user_Accounts
                 WHERE UPPER(Username)=UPPER(@Username)
                 AND Password=@Password";
 
@@ -64,7 +64,7 @@ namespace DataServiceLayer
             List<UserAccount> list = new();
 
             string query = @"
-                SELECT * FROM tbl_UserAccounts
+                SELECT * FROM user_Accounts
                 WHERE UPPER(Username)=UPPER(@Username)";
 
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
@@ -93,7 +93,7 @@ namespace DataServiceLayer
         public bool UpdateUserAccount(string username, string fullName, string cellphoneNumber, string password)
         {
             string query = @"
-                UPDATE tbl_UserAccounts
+                UPDATE user_Accounts
                 SET FullName=@FullName,
                     CellphoneNumber=@Cell,
                     Password=@Password
